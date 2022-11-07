@@ -1,6 +1,6 @@
-FROM gitpod/workspace-full
+FROM rocker/tidyverse
 
-RUN brew install R
+# RUN brew install R
 
 RUN R --slave -e 'install.packages("languageserver", repos="https://cran.r-project.org/")'
 
