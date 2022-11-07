@@ -8,7 +8,7 @@ RUN R --slave -e 'install.packages("jsonlite", repos="https://cran.r-project.org
 
 RUN R --slave -e 'install.packages("rlang", repos="https://cran.r-project.org/")'
 
-RUN apt update && apt install python3 python3-pip libzmq3-dev
+RUN apt update && apt install -y python3 python3-pip libzmq3-dev
 
 RUN pip install jupyter-client
 
