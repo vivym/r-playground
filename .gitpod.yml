@@ -1,10 +1,6 @@
 image:
   file: .gitpod.Dockerfile
 
-# tasks:
-#   - name: Install Dependencies
-#     init: R -e "install.packages('languageserver', repos='https://cran.r-project.org/')"
-
 vscode:
   extensions:
     - reditorsupport.r
