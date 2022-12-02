@@ -1,7 +1,5 @@
 FROM jupyter/r-notebook
 
-USER root
-
 RUN R --slave -e 'install.packages("languageserver", repos="https://cran.r-project.org/")'
 
 RUN R --slave -e 'install.packages("jsonlite", repos="https://cran.r-project.org/")'
@@ -10,8 +8,6 @@ RUN R --slave -e 'install.packages("rlang", repos="https://cran.r-project.org/")
 
 RUN R --slave -e 'install.packages("devtools", repos="https://cran.r-project.org/")'
 
-RUN apt-get update && apt-get install -y libmagick++-dev
-
-RUN apt-get install -y imagemagick-6.q16 libmagickcore-6.q16-6 libmagickcore-6.q16-6-extra
+RUN conda install -c conda-forge r-magick
 
 RUN R --slave -e 'devtools::install_github("zhentaoshi/bHP_R_pkg")'
