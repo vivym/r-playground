@@ -12,4 +12,6 @@ RUN R --slave -e 'install.packages("devtools", repos="https://cran.r-project.org
 
 RUN apt-get update && apt-get install -y libmagick++-dev
 
+RUN apt-get install -y imagemagick-6.q16 libmagickcore-6.q16-6 libmagickcore-6.q16-6-extra
+
 RUN R --slave -e 'devtools::install_github("zhentaoshi/bHP_R_pkg")'
